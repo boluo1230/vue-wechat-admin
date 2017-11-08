@@ -17,4 +17,6 @@ npm run prod (vue-admin编译上线)
 
 访问: http://localhost:4000
 
+[演示地址](http://api.vueadmin.com/#/echarts)
+
 ```
