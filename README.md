@@ -1,6 +1,6 @@
 ## 项目运行
 
-[演示地址](http://api.vueadmin.com/#/echarts)
+[演示地址](http://vueadmin.com/#/echarts)
 
 ```
 git clone https://github.com/vueadmin/VueAdmin.git
