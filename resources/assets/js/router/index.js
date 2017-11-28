@@ -93,6 +93,29 @@ const routes = [
     }, {
         path: '/',
         component: Home,
+        name: '企业微信',
+        iconCls: 'el-icon-menu',
+        hidden: false,
+        children: [
+            { path: '/view/editor', component: ViewEditor, name: '富文本编辑器'},
+            { path: '/view/echarts', component: ViewEcharts, name: '数据可视化' },
+            { path: '/view/form', component: ViewForm, name: '表单验证' }
+        ]
+    }, {
+        path: '/',
+        component: Home,
+        name: '微信门店',
+        iconCls: 'el-icon-menu',
+        hidden: false
+    }, {
+        path: '/',
+        component: Home,
+        name: '微信卡券',
+        iconCls: 'el-icon-menu',
+        hidden: false
+    }, {
+        path: '/',
+        component: Home,
         name: '系统管理',
         iconCls: 'el-icon-setting',
         hidden: false,
