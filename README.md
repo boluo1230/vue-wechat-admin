@@ -3,7 +3,11 @@
 [演示地址](http://vueadmin.com/#/echarts)
 
 ![首页](https://github.com/vueadmin/VueAdmin/blob/master/public/img/home.png)
-
+![列表](https://github.com/vueadmin/VueAdmin/blob/master/public/img/home.png)
+![列表](https://github.com/vueadmin/VueAdmin/blob/master/public/img/home.png)
+![表单](https://github.com/vueadmin/VueAdmin/blob/master/public/img/home.png)
+![导出](https://github.com/vueadmin/VueAdmin/blob/master/public/img/home.png)
+![富文本](https://github.com/vueadmin/VueAdmin/blob/master/public/img/home.png)
 ```
 git clone https://github.com/vueadmin/VueAdmin.git
 
