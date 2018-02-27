@@ -1,7 +1,5 @@
 ## 项目运行
 
-[演示地址](http://vueadmin.com/#/echarts)
-
 ![首页](https://github.com/vueadmin/VueAdmin/blob/master/public/img/home.png)
 ![列表](https://github.com/vueadmin/VueAdmin/blob/master/public/img/1.png)
 ![列表](https://github.com/vueadmin/VueAdmin/blob/master/public/img/2.png)
