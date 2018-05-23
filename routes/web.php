@@ -14,6 +14,3 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::post('userinfo', 'QuerylistController@index');
-Route::get('userinfo', 'QuerylistController@index');

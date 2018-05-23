@@ -15,27 +15,11 @@
           </el-table-column>
           <el-table-column prop="purpose" label="用途" width="280">
           </el-table-column>
-          <el-table-column label="排序">
-            <template slot-scope="scope">
-              <el-dropdown trigger="click">
-                <span class="el-dropdown-link">
-                  {{scope.row.sort}}<i class="el-icon-caret-bottom el-icon--right"></i>
-                </span>
-                <el-dropdown-menu slot="dropdown">
-                  <el-dropdown-item>1</el-dropdown-item>
-                  <el-dropdown-item>2</el-dropdown-item>
-                  <el-dropdown-item>3</el-dropdown-item>
-                  <el-dropdown-item divided>随机</el-dropdown-item>
-                </el-dropdown-menu>
-              </el-dropdown>
-            </template>
-          </el-table-column>
           <el-table-column label="显示状态">
             <template slot-scope="scope">
               <el-button v-if="scope.row.state == true" size="small" @click="eventStateUpdate(scope.row, scope.$index)">显示</el-button>
               <el-button v-if="scope.row.state == false" size="small" type="danger" @click="eventStateUpdate(scope.row, scope.$index)">隐藏</el-button>
             </template>
-          </el-table-column>
           </el-table-column>
           <el-table-column label="操作">
             <template slot-scope="scope">
@@ -89,27 +73,22 @@ export default {
       tableData: [{
         img_src: '2017-9-8 10:00:00',
         purpose: '登录焦点图片',
-        sort: 1,
         state: true
       }, {
         img_src: '2017-9-8 10:00:00',
         purpose: '登录焦点图片',
-        sort: 2,
         state: false
       }, {
         img_src: '2017-9-8 10:00:00',
         purpose: '登录焦点图片',
-        sort: 3,
         state: true
       }, {
         img_src: '2017-9-8 10:00:00',
         purpose: '登录焦点图片',
-        sort: 4,
         state: true
       }, {
         img_src: '2017-9-8 10:00:00',
         purpose: '登录焦点图片',
-        sort: 5,
         state: true
       }]
     }

@@ -13,16 +13,21 @@
       </el-col>
       <el-col :span="24" style="margin-top: 20px;">
         <el-table :data="tableData" stripe style="width: 100%">
+          <el-table-column prop="username" label="姓名">
+          </el-table-column>
           <el-table-column prop="phone" label="手机号">
           </el-table-column>
-          <el-table-column prop="start" label="进店时间">
+          <el-table-column prop="gender" label="性别">
           </el-table-column>
-          <el-table-column prop="stop" label="离店时间">
+          <el-table-column prop="age" label="年龄">
           </el-table-column>
+          <el-table-column prop="status" label="状态">
           </el-table-column>
-          <el-table-column label="查看">
+          <el-table-column prop="creare_date" label="创建时间">
+          </el-table-column>
+          <el-table-column label="进店记录">
             <template slot-scope="scope">
-              <el-button size="small" @click="userListEntryRecord = true">进店记录</el-button>
+              <el-button size="small" @click="userListEntryRecord = true">查看</el-button>
               <!-- <el-button size="small" @click="userListUserInfo = true">客户信息</el-button> -->
             </template>
           </el-table-column>
@@ -59,10 +64,12 @@ export default {
         shop: '2017-9-1 10:00:00'
       }],
       tableData: [{
+        username: 'JsonZhang',
+        gender: 'man',
+        age: '22',
         phone: '18612243416',
-        start: '2017-9-1 9:20:12',
-        stop: '2017-9-8 10:00:00',
-        state: 1
+        status: '活跃',
+        creare_date: '2017-9-1 9:20:12'
       }]
     }
   },

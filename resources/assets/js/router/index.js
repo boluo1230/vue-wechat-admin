@@ -23,20 +23,19 @@ Vue.use(Router)
 Vue.prototype.$echarts = echarts
 
 const routes = [
-    { 
-        path: '/login', 
+    {
+        path: '/login',
         component: Login,
         hidden: true
     },
-    { 
-        path: '/', 
+    {
+        path: '/',
         component: Home,
         hidden: true
     },{
         path: '/',
         component: Home,
         name: '数据监测',
-        iconCls: 'el-icon-picture',
         hidden: true,
         children: [
             { path: '/echarts', component: Echarts, name: '用户点击数据' },
@@ -44,18 +43,18 @@ const routes = [
     }, {
         path: '/',
         component: Home,
-        name: '焦点图管理',
-        iconCls: 'el-icon-picture',
+        name: 'Banner管理',
+        iconCls: 'el-icon-menu',
         hidden: false,
         children: [
-            { path: '/focus/index', component: FocusLogin, name: '登录焦点图' },
-            { path: '/focus/login', component: FocusIndex, name: '首页焦点图' }
+            { path: '/focus/index', component: FocusLogin, name: '登录Banner' },
+            { path: '/focus/login', component: FocusIndex, name: '首页Banner' }
         ]
     }, {
         path: '/',
         component: Home,
         name: '活动管理',
-        iconCls: 'el-icon-date',
+        iconCls: 'el-icon-menu',
         hidden: false,
         children: [
             { path: '/event/shop', component: EventShop, name: '店内活动' },
@@ -64,8 +63,8 @@ const routes = [
     }, {
         path: '/',
         component: Home,
-        name: '进店用户管理',
-        iconCls: 'el-icon-d-caret',
+        name: '用户管理',
+        iconCls: 'el-icon-menu',
         hidden: false,
         children: [
             { path: '/user', component: UserList, name: '用户列表' }
@@ -73,8 +72,8 @@ const routes = [
     }, {
         path: '/',
         component: Home,
-        name: '销售列表管理',
-        iconCls: 'el-icon-document',
+        name: '员工管理',
+        iconCls: 'el-icon-menu',
         hidden: false,
         children: [
             { path: '/sale/list', component: SaleList, name: '销售顾问列表' }
@@ -82,45 +81,13 @@ const routes = [
     }, {
         path: '/',
         component: Home,
-        name: '功能列表',
+        name: '组件',
         iconCls: 'el-icon-menu',
         hidden: false,
         children: [
             { path: '/view/editor', component: ViewEditor, name: '富文本编辑器'},
             { path: '/view/echarts', component: ViewEcharts, name: '数据可视化' },
             { path: '/view/form', component: ViewForm, name: '表单验证' }
-        ]
-    }, {
-        path: '/',
-        component: Home,
-        name: '企业微信',
-        iconCls: 'el-icon-menu',
-        hidden: false,
-        children: [
-            { path: '/view/editor', component: ViewEditor, name: '富文本编辑器'},
-            { path: '/view/echarts', component: ViewEcharts, name: '数据可视化' },
-            { path: '/view/form', component: ViewForm, name: '表单验证' }
-        ]
-    }, {
-        path: '/',
-        component: Home,
-        name: '微信门店',
-        iconCls: 'el-icon-menu',
-        hidden: false
-    }, {
-        path: '/',
-        component: Home,
-        name: '微信卡券',
-        iconCls: 'el-icon-menu',
-        hidden: false
-    }, {
-        path: '/',
-        component: Home,
-        name: '系统管理',
-        iconCls: 'el-icon-setting',
-        hidden: false,
-        children: [
-            { path: '/system/update/password', component: SystemIndex, name: '修改密码' }
         ]
     }
 ]
