@@ -6,6 +6,6 @@ export default [
       title: 'Home',
       hideInMenu: true
     },
-    component: () => import('../view/home')
+    component: () => import('@/view/home')
   }
 ]
