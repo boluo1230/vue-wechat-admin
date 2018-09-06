@@ -1,18 +1,31 @@
-import Home from '@/views/Home.vue'
+import Layout from '@/views/Layout'
 
 const routes = [
 	{
 		path: '/',
-		name: 'home',
-		component: Home
-	},
-	{
-		path: '/about',
-		name: 'about',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+		name: 'index',
+		mate: {
+			title: '首页',
+			icon: 'chrome'
+		},
+		component: Layout,
+		children: [{
+			path: '/home',
+			name: 'home',
+			mate: {
+				title: '主页',
+				icon: 'chrome'
+			},
+			component: () => import('@/views/Home')
+		}, {
+			path: '/dashboard',
+			name: 'dashboard',
+			mate: {
+				title: '仪表页',
+				icon: 'chrome'
+			},
+			component: () => import('@/views/Dashboard')
+		}]
 	}
 ]
 
