@@ -2,7 +2,7 @@
 
 ## 简介
 
-> vue-wechat-admin是基于 `vue.js`，`vue-cli3.0`，搭配使用[Ant Design Vue](https://github.com/vueComponent/ant-design-vue) UI组件库形成的一套微信后台集成解决方案。
+> vue-wechat-admin是基于 *vue.js* *vue-cli3.0* 搭配使用[Ant Design Vue](https://github.com/vueComponent/ant-design-vue) UI组件库形成的一套微信后台集成解决方案
 
 ## 功能
 
