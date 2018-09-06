@@ -7,7 +7,7 @@
     >
       <div class="logo" />
       <a-menu theme="dark" mode="inline" route>
-				<a-sub-menu key="sub1" :key="index" v-for="(item, index) in $router.options.routes">
+				<a-sub-menu :key="index" v-for="(item, index) in $router.options.routes">
 					<span slot="title"><a-icon :type="item.mate.icon" /><span>{{ item.mate.title }}</span></span>
 					<a-menu-item v-for="child in item.children">
 						<a-icon :type="child.mate.icon" />
