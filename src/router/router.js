@@ -2,29 +2,32 @@ import Layout from '@/views/Layout'
 
 const routes = [
 	{
-		path: '/',
-		name: 'index',
+		path: '/department',
+		name: 'department',
 		mate: {
-			title: '首页',
-			icon: 'chrome'
+			title: '通讯录',
+			icon: 'folder',
+			key: 'department'
 		},
 		component: Layout,
 		children: [{
-			path: '/home',
-			name: 'home',
+			path: '/department/index',
+			name: 'department_index',
 			mate: {
-				title: '主页',
-				icon: 'chrome'
+				title: '组织架构',
+				icon: 'solution',
+				key: 'department_index'
 			},
-			component: () => import('@/views/Home')
+			component: () => import('@/views/Department/index')
 		}, {
-			path: '/dashboard',
-			name: 'dashboard',
+			path: '/department/tag',
+			name: 'department_tag',
 			mate: {
-				title: '仪表页',
-				icon: 'chrome'
+				title: '标签',
+				icon: 'tag',
+				key: 'department_tag'
 			},
-			component: () => import('@/views/Dashboard')
+			component: () => import('@/views/Tag/index')
 		}]
 	}
 ]

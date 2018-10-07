@@ -5,9 +5,15 @@
       collapsible
       v-model="collapsed"
     >
-      <div class="logo" />
-      <a-menu theme="dark" mode="inline" route>
-				<a-sub-menu :key="index" v-for="(item, index) in $router.options.routes">
+      <div v-if="!collapsed" class="logo">
+				<span class="logo-wechat">WX</span>
+				<span class="logo-admin">Admin</span>
+			</div>
+			<div v-else class="logo">
+				<span class="logo-wechat">W</span>
+			</div>
+      <a-menu theme="dark" mode="inline" @openChange="onOpenChange" :openKeys="openKeys">
+				<a-sub-menu v-for="item in routes" :key="item.mate.key">
 					<span slot="title"><a-icon :type="item.mate.icon" /><span>{{ item.mate.title }}</span></span>
 					<a-menu-item :key="child.path" v-for="child in item.children">
 						<a-icon :type="child.mate.icon" />
@@ -25,11 +31,11 @@
           @click="()=> collapsed = !collapsed"
         />
       </a-layout-header>
-      <a-layout-content :style="{ margin: '24px 16px', padding: '24px', background: '#fff' }">
-        <keep-alive>
+			<a-layout-content :style="{ margin: '24px 16px', background: '#fff' }">
+				<keep-alive>
 					<router-view/>
 				</keep-alive>
-      </a-layout-content>
+			</a-layout-content>
     </a-layout>
   </a-layout>
 </template>
@@ -37,12 +43,30 @@
 export default {
   data(){
     return {
-      collapsed: false,
+			collapsed: false,
+			rootSubmenuKeys: [],
+			openKeys: [],
+			routes: []
     }
   },
 	created () {
-		// console.log(this.$router.options.routes)
-	}
+		this.routes = this.$router.options.routes
+		this.rootSubmenuKeys = this.routes.map(item => {
+			return item.mate.key
+		})
+		this.openKeys.push(this.rootSubmenuKeys[0])
+	},
+	methods: {
+    onOpenChange (openKeys) {
+      const latestOpenKey = openKeys.find(key => this.openKeys.indexOf(key) === -1)
+      if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+        this.openKeys = openKeys
+      } else {
+        this.openKeys = latestOpenKey ? [latestOpenKey] : []
+			}
+			console.log(this.openKeys)
+    }
+  }
 }
 </script>
 <style>
@@ -64,7 +88,18 @@ export default {
 
 #components-layout .logo {
   height: 32px;
-  background: rgba(255,255,255,.2);
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
   margin: 16px;
+}
+
+.logo-wechat {
+	color: #64B587;
+}
+
+.logo-admin {
+	color: #FFF;
 }
 </style>
